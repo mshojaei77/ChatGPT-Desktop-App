@@ -9,6 +9,7 @@ from responder import ChatGPT
 from dotenv import load_dotenv, set_key, find_dotenv
 load_dotenv()
 import fitz  # PyMuPDF
+
 class ChatThread(QThread):
     response_received = Signal(str)
     error_occurred = Signal(str)
@@ -205,12 +206,193 @@ class MainWindow(QMainWindow):
         self.update_conversation_list()
 
     def apply_light_theme(self):
-        light_theme = open('light_theme.css', 'r', encoding='utf-8').read()
+        light_theme = '''
+/* Main window background and default text color */
+QMainWindow {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+}
+QWidget#right_widget {
+    background-color: #F5F5F5;
+    color: #000000;
+    border: none;
+}
+
+/* Left sidebar and its widgets */
+QWidget#left-widget {
+    background-color: #F5F5F5;
+    color: #000000;
+}
+
+QLineEdit, QTextEdit, QListWidget {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #DDDDDD;
+}
+
+QPushButton#upgrade-btn {
+    background-color: #ffa500;
+    color: black;
+    font-weight: bold;
+}
+
+QPushButton#theme-button {
+    background-color: #292929;
+    color: #FFFFFF;
+}
+
+/* Combobox */
+QComboBox {
+    background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    padding: 8px 20px 8px 10px; /* Adjust padding as needed */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 10px; /* Adjust width of dropdown arrow */
+    border: none; /* Remove default dropdown arrow border */
+}
+
+QComboBox::down-arrow {
+    image: url(down_arrow_light.png); /* Path to your light theme arrow */
+    padding-right: 5px; /* Add some space between text and arrow */
+}
+
+QComboBox QAbstractListView {
+    background-color: #F5F5F5;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 50px; /* Adjust minimum width of the dropdown list */
+}
+
+QComboBox QAbstractListView::item:selected {
+    background-color: #DDDDDD;
+}'''
         self.setStyleSheet(light_theme)
         self.upload_button.setIcon(QIcon("document.png"))
 
     def apply_dark_theme(self):
-        dark_theme = open('dark_theme.css', 'r', encoding='utf-8').read()
+        dark_theme = '''/* Main window background and default text color */
+QMainWindow {
+    background-color: #343541;
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+/* Left sidebar and its widgets */
+QWidget#left-widget {
+    background-color: #40414f;
+    color: #FFFFFF;
+}
+
+QLineEdit, QTextEdit, QListWidget {
+    background-color: #40414f;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    padding: 8px;
+    color: #FFFFFF;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #40414f;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #565869;
+}
+
+QPushButton#new-chat-btn {
+    background-color: #10a37f;
+    color: white;
+    font-weight: bold;
+}
+
+QPushButton#upgrade-btn {
+    background-color: #ffa500;
+    color: black;
+    font-weight: bold;
+}
+
+QPushButton#theme-button {
+    background-color: #f5f5f5;
+    color: #292929;
+}
+
+QPushButton#settings-btn {
+    background-color: #f5f5f5;
+    color: #292929;
+}
+
+QPushButton#clear-btn {
+    background-color: #f5f5f5;
+    color: #292929;
+}
+
+QPushButton#send-btn {
+    background-color: #f5f5f5;
+    color: #292929;
+}
+
+/* Combobox */
+QComboBox {
+    background-color: #40414f;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px 8px 10px; /* Adjust padding as needed */
+    color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px; /* Adjust width of dropdown arrow */
+    border: none; /* Remove default dropdown arrow border */
+}
+
+QComboBox::down-arrow {
+    image: url(down_arrow_dark.png); /* Path to your dark theme arrow */
+    padding-right: 5px; /* Add some space between text and arrow */
+}
+
+QComboBox QAbstractListView {
+    background-color: #565869;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 100px; /* Adjust minimum width of the dropdown list */
+}
+
+QComboBox QAbstractListView::item:selected {
+    background-color: #686a7c;
+}'''
         self.setStyleSheet(dark_theme)
         self.upload_button.setIcon(QIcon("document_dark.png"))
 
