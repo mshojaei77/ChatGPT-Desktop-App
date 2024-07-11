@@ -1,6 +1,11 @@
 # ChatGPT Desktop App
 
-![Video Demo](video_demo_url) 
+## Demo
+
+![Video Demo](https://github.com/mshojaei77/ChatGPT-Desktop-App/assets/76538971/481571b0-9a2f-425f-aefa-4d0d36540a5b) 
+
+
+
 
 ## Description
 
