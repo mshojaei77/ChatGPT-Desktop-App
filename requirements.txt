@@ -1,0 +1,8 @@
+PyQt5
+psutil
+GPUtil
+setuptools
+ollama
+langchain-ollama
+markdown2
+PyQtWebEngine

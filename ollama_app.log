@@ -1,0 +1,199 @@
+2024-09-19 13:03:59,647 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2024-09-19 13:03:59,650 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001AEAB59D970>
+2024-09-19 13:03:59,650 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 13:03:59,650 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 13:03:59,650 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 13:03:59,650 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 13:03:59,650 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 13:03:59,652 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 19 Sep 2024 09:33:59 GMT'), (b'Content-Length', b'335')])
+2024-09-19 13:03:59,652 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2024-09-19 13:03:59,652 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 13:03:59,652 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 13:03:59,652 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 13:03:59,652 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 13:14:49,387 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=2081 local_address=None timeout=None socket_options=None
+2024-09-19 13:14:49,387 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002008F3768A0>
+2024-09-19 13:14:49,387 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 13:14:49,387 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 13:14:49,387 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 13:14:49,387 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 13:14:49,387 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 13:14:49,740 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 503, b'Service Unavailable', [(b'Connection', b'close'), (b'Proxy-Connection', b'close'), (b'Content-Length', b'0')])
+2024-09-19 13:14:49,741 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 503 Service Unavailable"
+2024-09-19 13:14:49,741 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 13:14:49,741 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 13:14:49,741 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 13:14:49,742 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 13:14:49,744 - __main__ - ERROR - Error refreshing model list: Ollama executable not found
+Traceback (most recent call last):
+  File "e:\nova-desktop\ollama_app.py", line 310, in refresh_model_list
+    models = ollama.list()
+             ^^^^^^^^^^^^^
+  File "E:\nova-desktop\.venv\Lib\site-packages\ollama\_client.py", line 465, in list
+    return self._request('GET', '/api/tags').json()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\nova-desktop\.venv\Lib\site-packages\ollama\_client.py", line 75, in _request
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "e:\nova-desktop\ollama_app.py", line 319, in refresh_model_list
+    raise FileNotFoundError("Ollama executable not found")
+FileNotFoundError: Ollama executable not found
+2024-09-19 13:18:25,969 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=2081 local_address=None timeout=None socket_options=None
+2024-09-19 13:18:25,971 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001CC85F8A720>
+2024-09-19 13:18:25,971 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 13:18:25,971 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 13:18:25,971 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 13:18:25,971 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 13:18:25,971 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 13:18:26,321 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 503, b'Service Unavailable', [(b'Connection', b'close'), (b'Proxy-Connection', b'close'), (b'Content-Length', b'0')])
+2024-09-19 13:18:26,322 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 503 Service Unavailable"
+2024-09-19 13:18:26,322 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 13:18:26,322 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 13:18:26,322 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 13:18:26,322 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 13:22:47,854 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-09-19 13:22:47,855 - httpx - DEBUG - load_verify_locations cafile='E:\\nova-desktop\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-09-19 13:22:47,994 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-09-19 13:22:47,994 - httpx - DEBUG - load_verify_locations cafile='E:\\nova-desktop\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-09-19 13:22:48,133 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-09-19 13:22:48,135 - httpx - DEBUG - load_verify_locations cafile='E:\\nova-desktop\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-09-19 13:22:48,274 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-09-19 13:22:48,275 - httpx - DEBUG - load_verify_locations cafile='E:\\nova-desktop\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-09-19 13:22:48,416 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-09-19 13:22:48,417 - httpx - DEBUG - load_verify_locations cafile='E:\\nova-desktop\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-09-19 13:22:48,555 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-09-19 13:22:48,555 - httpx - DEBUG - load_verify_locations cafile='E:\\nova-desktop\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-09-19 13:22:48,699 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=2081 local_address=None timeout=None socket_options=None
+2024-09-19 13:22:48,699 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001A55BD02330>
+2024-09-19 13:22:48,699 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 13:22:48,700 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 13:22:48,700 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 13:22:48,700 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 13:22:48,700 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 13:22:49,038 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 503, b'Service Unavailable', [(b'Connection', b'close'), (b'Proxy-Connection', b'close'), (b'Content-Length', b'0')])
+2024-09-19 13:22:49,039 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 503 Service Unavailable"
+2024-09-19 13:22:49,039 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 13:22:49,039 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 13:22:49,039 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 13:22:49,039 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 13:25:48,330 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=2081 local_address=None timeout=None socket_options=None
+2024-09-19 13:25:48,330 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026A57954CB0>
+2024-09-19 13:25:48,330 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 13:25:48,330 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 13:25:48,330 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 13:25:48,330 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 13:25:48,330 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 13:25:48,759 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 503, b'Service Unavailable', [(b'Connection', b'close'), (b'Proxy-Connection', b'close'), (b'Content-Length', b'0')])
+2024-09-19 13:25:48,760 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 503 Service Unavailable"
+2024-09-19 13:25:48,760 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 13:25:48,760 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 13:25:48,760 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 13:25:48,760 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 13:25:48,790 - __main__ - ERROR - Error setting up tabs: 'OllamaApp' object has no attribute 'model'
+Traceback (most recent call last):
+  File "e:\nova-desktop\ollama_app.py", line 66, in init_ui
+    self.setup_chat_tab()
+  File "e:\nova-desktop\ollama_app.py", line 121, in setup_chat_tab
+    self.refresh_model_list()
+  File "e:\nova-desktop\ollama_app.py", line 372, in refresh_model_list
+    self.model.setRowCount(0)
+    ^^^^^^^^^^
+AttributeError: 'OllamaApp' object has no attribute 'model'. Did you mean: 'move'?
+2024-09-19 13:28:52,738 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=2081 local_address=None timeout=None socket_options=None
+2024-09-19 13:28:52,739 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002429A174E90>
+2024-09-19 13:28:52,739 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 13:28:52,740 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 13:28:52,740 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 13:28:52,740 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 13:28:52,740 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 13:28:53,102 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 503, b'Service Unavailable', [(b'Connection', b'close'), (b'Proxy-Connection', b'close'), (b'Content-Length', b'0')])
+2024-09-19 13:28:53,103 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 503 Service Unavailable"
+2024-09-19 13:28:53,103 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 13:28:53,103 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 13:28:53,103 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 13:28:53,103 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 13:31:25,077 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=2081 local_address=None timeout=None socket_options=None
+2024-09-19 13:31:25,078 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000266FEF63FB0>
+2024-09-19 13:31:25,078 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 13:31:25,078 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 13:31:25,078 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 13:31:25,079 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 13:31:25,079 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 13:31:25,433 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 503, b'Service Unavailable', [(b'Connection', b'close'), (b'Proxy-Connection', b'close'), (b'Content-Length', b'0')])
+2024-09-19 13:31:25,434 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 503 Service Unavailable"
+2024-09-19 13:31:25,434 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 13:31:25,434 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 13:31:25,434 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 13:31:25,434 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 13:34:15,230 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2024-09-19 13:34:15,231 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001FE974F6FC0>
+2024-09-19 13:34:15,231 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 13:34:15,232 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 13:34:15,232 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 13:34:15,232 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 13:34:15,232 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 13:34:15,233 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 19 Sep 2024 10:04:15 GMT'), (b'Content-Length', b'661')])
+2024-09-19 13:34:15,233 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2024-09-19 13:34:15,233 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 13:34:15,233 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 13:34:15,233 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 13:34:15,233 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 14:21:24,958 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2024-09-19 14:21:24,959 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D8E3BECEC0>
+2024-09-19 14:21:24,959 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 14:21:24,959 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 14:21:24,959 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 14:21:24,960 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 14:21:24,960 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 14:21:24,961 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 19 Sep 2024 10:51:24 GMT'), (b'Content-Length', b'661')])
+2024-09-19 14:21:24,961 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2024-09-19 14:21:24,961 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 14:21:24,961 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 14:21:24,961 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 14:21:24,961 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 14:24:31,874 - __main__ - DEBUG - Model changed to: gemma2:2b
+2024-09-19 14:24:31,903 - __main__ - ERROR - Error setting up tabs: 'OllamaApp' object has no attribute 'refresh_system_info'
+Traceback (most recent call last):
+  File "e:\nova-desktop\ollama_app.py", line 120, in init_ui
+    self.setup_system_info_tab()
+  File "e:\nova-desktop\ollama_app.py", line 265, in setup_system_info_tab
+    self.refresh_system_info_button.clicked.connect(self.refresh_system_info)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'OllamaApp' object has no attribute 'refresh_system_info'. Did you mean: 'refresh_system_info_button'?
+2024-09-19 14:24:45,709 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:11434
+2024-09-19 14:24:49,944 - urllib3.connectionpool - DEBUG - http://localhost:11434 "POST /api/chat HTTP/11" 200 None
+2024-09-19 14:25:03,353 - __main__ - DEBUG - Conversation saved to: E:/nova-desktop/hi.json
+2024-09-19 14:25:06,898 - __main__ - DEBUG - Conversation loaded from: E:/nova-desktop/hi.json
+2024-09-19 14:25:09,586 - __main__ - DEBUG - Started new conversation
+2024-09-19 14:25:13,827 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2024-09-19 14:25:13,828 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026FE57097C0>
+2024-09-19 14:25:13,828 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-09-19 14:25:13,828 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-09-19 14:25:13,828 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-09-19 14:25:13,828 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-09-19 14:25:13,828 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-09-19 14:25:13,829 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Thu, 19 Sep 2024 10:55:13 GMT'), (b'Content-Length', b'661')])
+2024-09-19 14:25:13,830 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2024-09-19 14:25:13,830 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-09-19 14:25:13,830 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-09-19 14:25:13,830 - httpcore.http11 - DEBUG - response_closed.started
+2024-09-19 14:25:13,830 - httpcore.http11 - DEBUG - response_closed.complete
+2024-09-19 14:49:23,512 - __main__ - DEBUG - Attempting to change model to: gemma2:2b
+2024-09-19 14:49:23,512 - __main__ - ERROR - Error changing model: 'OllamaApp' object has no attribute 'temperature'
+Traceback (most recent call last):
+  File "e:\nova-desktop\ollama_app.py", line 575, in change_model
+    temperature=self.temperature.value(),
+                ^^^^^^^^^^^^^^^^
+AttributeError: 'OllamaApp' object has no attribute 'temperature'
+2024-09-19 14:49:23,531 - __main__ - ERROR - Error setting up tabs: 'OllamaApp' object has no attribute 'refresh_system_info'
+Traceback (most recent call last):
+  File "e:\nova-desktop\ollama_app.py", line 120, in init_ui
+    self.setup_system_info_tab()
+  File "e:\nova-desktop\ollama_app.py", line 265, in setup_system_info_tab
+    self.refresh_system_info_button.clicked.connect(self.refresh_system_info)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'OllamaApp' object has no attribute 'refresh_system_info'. Did you mean: 'refresh_system_info_button'?
