@@ -242,7 +242,7 @@ class ChatbotApp(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle('Ollama Chatbot v2.2')
+        self.setWindowTitle('Ollama Chatbot v0.1')
         self.resize(600, 850)  # Set initial size
         self.center()  # Center the window on the screen
         
